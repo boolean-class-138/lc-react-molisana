@@ -1,0 +1,95 @@
+/*-----------------
+    RESET
+------------------*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*-----------------
+    GENERAL
+------------------*/
+body {
+  font-family: "Raleway", serif;
+  min-height: 100vh;
+  background-image: url("/img/mountains.jpg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col {
+  flex-grow: 1;
+}
+
+/*-----------------
+    HEADER
+------------------*/
+header {
+  text-align: center;
+}
+
+.main-nav {
+  margin-top: 40px;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.main-nav a {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 16px 20px;
+}
+
+.main-nav .active a {
+  background-color: #b8dae4;
+}
+
+/*-----------------
+    MAIN
+------------------*/
+main {
+  background-image: url("/img/background.jpg");
+  margin: 50px 0;
+  padding: 50px 0;
+  text-align: center;
+}
+
+/*-----------------
+    FOOTER
+------------------*/
+footer .row .col {
+  width: calc(100% / 3);
+}
+
+footer h3 {
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.footer-nav ul {
+  list-style: none;
+  line-height: 1.7;
+}
