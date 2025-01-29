@@ -1,54 +1,32 @@
+import Logo from "./Logo";
+import footerMenus from "../data/footerMenus";
+
 export default function Footer() {
   return (
     <footer className="container">
       <div className="row">
         <div className="col">
-          <img src="/img/logo.png" alt="Logo Molisana" />
+          <Logo />
         </div>
-        <div className="col">
-          <h3>Pastificio</h3>
-          <nav className="footer-nav">
-            <ul>
-              <li>
-                <a href="#">Link</a>
-              </li>
-              <li>
-                <a href="#">Link</a>
-              </li>
-              <li>
-                <a href="#">Link</a>
-              </li>
-              <li>
-                <a href="#">Link</a>
-              </li>
-              <li>
-                <a href="#">Link</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div className="col">
-          <h3>Prodotti</h3>
-          <nav className="footer-nav">
-            <ul>
-              <li>
-                <a href="#">Link</a>
-              </li>
-              <li>
-                <a href="#">Link</a>
-              </li>
-              <li>
-                <a href="#">Link</a>
-              </li>
-              <li>
-                <a href="#">Link</a>
-              </li>
-              <li>
-                <a href="#">Link</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+
+        {footerMenus.map((footerCol) => {
+          return (
+            <div className="col" key={footerCol.id}>
+              <h3>{footerCol.title}</h3>
+              <nav className="footer-nav">
+                <ul>
+                  {footerCol.links.map((link) => {
+                    return (
+                      <li key={link.id}>
+                        <a href={link.url}>{link.text}</a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </nav>
+            </div>
+          );
+        })}
       </div>
     </footer>
   );

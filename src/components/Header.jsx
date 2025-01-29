@@ -1,21 +1,45 @@
+import Logo from "./Logo";
+
+const links = [
+  {
+    id: 1,
+    text: "Home",
+    url: "#",
+    current: false,
+  },
+  {
+    id: 2,
+    text: "Prodotti",
+    url: "#",
+    current: true,
+  },
+  {
+    id: 3,
+    text: "Chi Siamo",
+    url: "#",
+    current: false,
+  },
+  {
+    id: 4,
+    text: "Contatti",
+    url: "#",
+    current: false,
+  },
+];
+
 export default function Header() {
   return (
     <header className="container">
-      <img src="/img/logo.png" alt="Logo Molisana" />
+      <Logo nota="Viva la pasta" width={150} />
       <nav className="main-nav">
         <ul>
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li className="active">
-            <a href="#">Prodotti</a>
-          </li>
-          <li>
-            <a href="#">Chi Siamo</a>
-          </li>
-          <li>
-            <a href="#">Contatti</a>
-          </li>
+          {links.map((link) => {
+            return (
+              <li key={link.id} className={link.current ? "active" : ""}>
+                <a href={link.url}>{link.text}</a>
+              </li>
+            );
+          })}
         </ul>
       </nav>
     </header>
